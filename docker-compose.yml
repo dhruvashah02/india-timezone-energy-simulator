@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  etl-pipeline:
+    build: .
+    container_name: energy-etl-service
+    volumes:
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: energy-postgres-db
+    environment:
+      - POSTGRES_USER=energy_user
+      - POSTGRES_PASSWORD=energy_password
+      - POSTGRES_DB=energy_simulator_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
