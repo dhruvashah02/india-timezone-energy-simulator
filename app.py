@@ -12,9 +12,8 @@ st.set_page_config(
 )
 
 # Title and Overview
-st.title("⚡ India Time-Zone Energy & Peak Demand Simulator")
-st.markdown("""
-**M.Tech Applied Machine Learning & Data-Science System Design (DSSD) Capstone Project**  
+st.title("⚡ Enerlytics")
+st.markdown(""" 
 This interactive dashboard evaluates the counterfactual impacts of shifting India's time zone 
 on national hourly electricity demand and peak load timing.
 """)
